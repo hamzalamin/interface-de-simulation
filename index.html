@@ -8,57 +8,80 @@
   </head>
   <body>
     <div class="steps">
-      <div class="step active">
-        <span class="step_number">1</span>
-        <span class="step_title">Simuler mon crédit</span>
+      <div class="step active" id="step-0">
+        <span class="step-number">1</span>
+        <span class="step-title">Simuler mon crédit</span>
         <form action="">
-          <div class="step_content">
+          <div class="step-content">
             <h4>Mon Projet</h4>
             <select class="step-select">
               <option value="">J'ai besoin d'argent</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
               <option value="">Option ela hassab</option>
             </select>
             <h4>Je suis</h4>
             <select class="step-select">
               <option value="">Fonctionnaire</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
-              <option value="">Option ela hassab</option>
             </select>
             <h4>Montant (en DH)</h4>
-            <input class="step-range" type="range" min="5000" max="600000" id="range1" oninput="updateValue('range1', 'value1')" />
+            <input
+              class="step-range"
+              type="range"
+              min="5000"
+              max="600000"
+              step="1000"
+              id="range1"
+              oninput="updateValue('range1', 'value1')"
+            />
             <input type="text" id="value1" value="0" readonly />
-            <h4>Montant (en DH)</h4>
-            <input class="step-range" type="range" min="12" max="72" id="range2" oninput="updateValue('range2', 'value2')" />
-            <input type="text" id="value2" value="0" readonly />
-            <h4>Montant (en DH)</h4>
-            <input class="step-range" type="range" min="70,91" max="52384,25" id="range3" oninput="updateValue('range3', 'value3')" />
-            <input type="text" id="value3" value="0" readonly />
+            <div class="continuer-button">
+              <button type="button" id="continue-button">Continuer</button>
+            </div>
           </div>
         </form>
       </div>
-      <div class="step">
-        <span class="step_number">2</span>
-        <span class="step_title">Mes coordonnées</span>
-        <div class="step_content">
+
+      <div class="step" id="step-1">
+        <span class="step-number">2</span>
+        <span class="step-title">Mes coordonnées</span>
+        <div class="step-content">
           <h4>Mon Projet</h4>
+          <p>hi im the step 2</p>
+          <form action="">
+            <div class="continuer-button">
+              <button type="button" id="continue-button">Continuer</button>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="step">
-        <span class="step_number">3</span>
-        <span class="step_title">Mes infos personnelles</span>
-        <div class="step_content">
+      <div class="step" id="step-2">
+        <span class="step-number">3</span>
+        <span class="step-title">Mes infos personnelles</span>
+        <div class="step-content">
           <h4>Mon Projet</h4>
+          <p>hi im the step 3</p>
         </div>
       </div>
     </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      let currentStep = 0; 
+      function showStep(step) {
+        document.querySelectorAll(".step").forEach((s, index) => {
+          s.classList.toggle("active", index === step);
+        });
+        currentStep = step;
+      }
+
+      document
+        .getElementById("continue-button")
+        .addEventListener("click", () => {
+          if (currentStep < 2) {
+            showStep(currentStep + 1); 
+          }
+        });
+      showStep(currentStep);
+    </script>
   </body>
-  <script src="js/main.js"></script>
 </html>

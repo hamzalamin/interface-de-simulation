@@ -15,20 +15,15 @@ body {
     margin: 0;
 }
 
-.main-title{
-    // font-size: 2.5rem;
-    // font-weight: bold;
-    // margin-bottom: 150px;
-}
+
 .steps {
     display: flex;
-    margin-top: 550px !important;
+    margin-top: 610px !important;
     width: 600px;
     justify-content: space-between;
     border: transparent solid 5px;
     border-bottom: transparent solid;
-    border-bottom-width: 550px;
-    // margin-bottom: 100px; 
+    border-bottom-width: 643px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -44,6 +39,7 @@ body {
     background-color: $ylw; 
     color: $blk; 
     padding: 30px;
+    display: block;
 }
 
 .step.active:after {
@@ -60,24 +56,25 @@ body {
   }
   
 
-.step_number{
+.step-number{
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     display: block;
 }
 
-.step_title{
+.step-title{
     font-size: 1rem;
     margin-top: 5px;
 }
 
 
-.step_content {
+.step-content {
     display: none;
+    margin: 10px 0;
 }
 
-.step.active .step_content {
+.step.active .step-content {
     display: block; 
     position: absolute;
     top: 100%; 
@@ -89,11 +86,11 @@ body {
     padding: 15px; 
 }
 
-.step_content h4{
+.step-content h4{
     color: $gry;
 }
 
-.step_content .step-select {
+.step-content .step-select {
     display: inline-block; 
     padding: 10px 15px; 
     border-radius: 5px; 
@@ -110,4 +107,19 @@ body {
     border-radius: 5px; 
     width: 93%;
     margin-top: -18px;
+}
+
+.continuer-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.continuer-button button{
+    background-color: $blu; 
+    color: $wht; 
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 20px; 
+    border-color: $wht;  
 }
