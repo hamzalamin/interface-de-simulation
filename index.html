@@ -33,6 +33,28 @@
               oninput="updateValue('range1', 'value1')"
             />
             <input type="text" id="value1" value="0" readonly />
+            <h4>Durée (en mois)</h4>
+            <input
+              class="step-range"
+              type="range"
+              min="12"
+              max="72"
+              step="1"
+              id="range2"
+              oninput="updateValue('range2', 'value2')"
+            />
+            <input type="text" id="value2" value="0" readonly />
+            <h4>Mensualité (en DH)</h4>
+            <input
+              class="step-range"
+              type="range"
+              min="70.91"
+              max="52384.25"
+              step="100"
+              id="range3"
+              oninput="updateValue('range3', 'value3')"
+            />
+            <input type="text" id="value3" value="0" readonly />
             <div class="continuer-button">
               <button type="button" id="continue-button">Continuer</button>
             </div>
@@ -43,11 +65,13 @@
       <div class="step" id="step-1">
         <span class="step-number">2</span>
         <span class="step-title">Mes coordonnées</span>
-        <div class="step-content">
-          <h4>Mon Projet</h4>
-          <p>hi im the step 2</p>
+        <div class="step-content1">
           <form action="">
-            <div class="continuer-button">
+          <h4>Email</h4>
+          <input type="text" class="step-select1">
+          <h4>Phone</h4>
+          <input type="text" class="step-select1">
+            <div class="continuer-button1">
               <button type="button" id="continue-button">Continuer</button>
             </div>
           </form>

@@ -74,6 +74,13 @@ body {
     margin: 10px 0;
 }
 
+.step-content1 {
+    display: none;
+    margin: 10px;
+    margin-left: -212px;
+
+}
+
 .step.active .step-content {
     display: block; 
     position: absolute;
@@ -86,8 +93,28 @@ body {
     padding: 15px; 
 }
 
+
+.step.active .step-content1 {
+    display: block; 
+    position: absolute;
+    top: 100%; 
+    left: 40px; 
+    width: 250%; 
+    background-color: $wht;
+    color: $blk;
+    margin-top: 10px;
+    padding: 15px; 
+    margin-left: -212px;
+
+}
+
 .step-content h4{
     color: $gry;
+}
+
+.step-content1 h4{
+    color: $gry;
+
 }
 
 .step-content .step-select {
@@ -98,6 +125,19 @@ body {
     color: $gry; 
     width: 100%;
     margin-top: -7px;
+
+}
+
+.step-content1 .step-select1 {
+    display: inline-block; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    background-color: $wht; 
+    color: $gry; 
+    width: 100%;
+    margin-top: -7px;
+    margin-left: 0px;
+
 
 }
 
@@ -116,6 +156,21 @@ body {
 }
 
 .continuer-button button{
+    background-color: $blu; 
+    color: $wht; 
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 20px; 
+    border-color: $wht;  
+}
+
+.continuer-button1{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.continuer-button1 button{
     background-color: $blu; 
     color: $wht; 
     font-size: 18px;
