@@ -67,12 +67,12 @@
         <span class="step-title">Mes coordonnées</span>
         <div class="step-content1">
           <form action="">
-          <h4>Email</h4>
-          <input type="text" class="step-select1">
-          <h4>Phone</h4>
-          <input type="text" class="step-select1">
+            <h4>Email</h4>
+            <input type="text" class="step-select1" />
+            <h4>Phone</h4>
+            <input type="text" class="step-select1" />
             <div class="continuer-button1">
-              <button type="button" id="continue-button">Continuer</button>
+              <button type="button" id="continue-button1">Continuer</button>
             </div>
           </form>
         </div>
@@ -82,15 +82,14 @@
         <span class="step-number">3</span>
         <span class="step-title">Mes infos personnelles</span>
         <div class="step-content">
-          <h4>Mon Projet</h4>
-          <p>hi im the step 3</p>
+          
         </div>
       </div>
     </div>
 
     <script src="js/main.js"></script>
     <script>
-      let currentStep = 0; 
+      let currentStep = 0;
       function showStep(step) {
         document.querySelectorAll(".step").forEach((s, index) => {
           s.classList.toggle("active", index === step);
@@ -101,10 +100,19 @@
       document
         .getElementById("continue-button")
         .addEventListener("click", () => {
-          if (currentStep < 2) {
-            showStep(currentStep + 1); 
+          if (currentStep < document.querySelectorAll(".step").length - 1) {
+            showStep(currentStep + 1);
           }
         });
+
+      document
+        .getElementById("continue-button1")
+        .addEventListener("click", () => {
+          if (currentStep < document.querySelectorAll(".step").length - 1) {
+            showStep(currentStep + 1);
+          }
+        });
+
       showStep(currentStep);
     </script>
   </body>
