@@ -7,156 +7,225 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <button type="button" class="prev-step">⬅️ Retour</button>
     <div class="steps">
-      <div class="step active" id="step-0">
+      <div class="step" id="step-0">
         <span class="step-number">1</span>
         <span class="step-title">Simuler mon crédit</span>
-        <form action="">
-          <div class="step-content">
-            <h4>Mon Projet</h4>
-            <select class="step-select">
-              <option value="">J'ai besoin d'argent</option>
-              <option value="">Option ela hassab</option>
-            </select>
-            <h4>Je suis</h4>
-            <select class="step-select">
-              <option value="">Fonctionnaire</option>
-            </select>
-            <h4>Montant (en DH)</h4>
-            <input
-              class="step-range"
-              type="range"
-              min="5000"
-              max="600000"
-              step="1000"
-              id="range1"
-              oninput="updateValue('range1', 'value1')"
-            />
-            <input type="text" id="value1" value="0" readonly />
-            <h4>Durée (en mois)</h4>
-            <input
-              class="step-range"
-              type="range"
-              min="12"
-              max="72"
-              step="1"
-              id="range2"
-              oninput="updateValue('range2', 'value2')"
-            />
-            <input type="text" id="value2" value="0" readonly />
-            <h4>Mensualité (en DH)</h4>
-            <input
-              class="step-range"
-              type="range"
-              min="70.91"
-              max="52384.25"
-              step="100"
-              id="range3"
-              oninput="updateValue('range3', 'value3')"
-            />
-            <input type="text" id="value3" value="0" readonly />
-            <div class="continuer-button">
-              <button type="button" id="continue-button">Continuer</button>
-            </div>
-          </div>
-        </form>
       </div>
-
       <div class="step" id="step-1">
         <span class="step-number">2</span>
         <span class="step-title">Mes coordonnées</span>
-        <div class="step-content1">
-          <form action="">
-            <h4>Email</h4>
-            <input type="text" class="step-select1" />
-            <h4>Phone</h4>
-            <input type="text" class="step-select1" />
-            <div class="continuer-button1">
-              <button type="button" id="continue-button1">Continuer</button>
-            </div>
-          </form>
-        </div>
       </div>
-
       <div class="step" id="step-2">
         <span class="step-number">3</span>
         <span class="step-title">Mes infos personnelles</span>
-        <div class="step-content2">
-          <form action="">
-            <h4>Civilité</h4>
-            <div class="civilite">
-              <label>
-                <input type="radio" name="civilite" value="Monsieur" />
-                Mademoiselle
-              </label>
-              <label>
-                <input type="radio" name="civilite" value="Madame" />
-                Madame
-              </label>
-              <label>
-                <input type="radio" name="civilite" value="Autre" />
-                Monsieur
-              </label>
-            </div>
-            <h4>Nome</h4>
-            <input type="text" class="step-select2" />
-            <h4>Prenome</h4>
-            <input type="text" class="step-select2" />
-            <h4>Numero de CIN / cart de sejour</h4>
-            <input type="text" class="step-select2" />
-            <h4>Date de Naissance</h4>
-            <input type="text" class="step-select2" />
-            <h4>Date d'embauche</h4>
-            <input type="text" class="step-select2" />
-            <h4> Total revenus mensuels (net en DH)</h4>
-            <input type="text" class="step-select2" />
-            <h4>Avez vous des crédits en cours ?</h4>
-            <div class="civilite">
-              <label>
-                <input type="radio" name="choice" value="Oui" />
-                Oui
-              </label>
-              <label>
-                <input type="radio" name="choice" value="Non" />
-                Non
-              </label>
-            </div>
-            <div class="continuer-button2">
-              <button type="button" id="continue-button2">Demender ce Credit</button>
-              <button type="button" id="continue-button2">Voir mon Recapitulatif</button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <form id="multi-step-form">
+      <div id="step-content-0" class="step-content">
+        <h4>Mon Project</h4>
+        <select class="" name="" id="">
+          <option value="">Optionnn</option>
+        </select>
+
+        <h4>Je suis</h4>
+        <select class="" name="" id="">
+          <option value="">Optionnn</option>
+        </select>
+
+        <div class="range-container">
+          <label for="custom-range1">Montant (en DH)</label>
+          <div>
+            <input class="range-value" type="number" id="range-value1" value="50000" oninput="updateRangeValue(1)" />
+          </div>
+          <input type="range" id="custom-range1" min="0" max="1000000" value="50000" oninput="updateInputValue(1)" />
+        </div>
+        
+        <div class="range-container">
+          <label for="custom-range2">Durée (en mois)</label>
+          <div>
+            <input class="range-value" type="number" id="range-value2" value="60" oninput="updateRangeValue(2)" />
+          </div>
+          <input type="range" id="custom-range2" min="1" max="360" value="60" oninput="updateInputValue(2)" />
+        </div>
+        
+        <div class="range-container">
+          <label for="custom-range3">Mensualités (en DH)</label>
+          <div>
+            <input class="range-value" type="number" id="range-value3" value="1000" oninput="updateRangeValue(3)" />
+          </div>
+          <input type="range" id="custom-range3" min="0" max="50000" value="1000" oninput="updateInputValue(3)" />
+        </div>
+        
+        <div class="btn">
+          <button type="button" class="next-step">Continue</button>
+        </div>
+      </div>
+
+      <div id="step-content-1" class="step-content">
+        <div class="input-container">
+          <input type="email" id="email" name="email" required />
+          <label for="email">Email*</label>
+        </div>
+
+        <div class="input-container">
+          <input type="tel" id="phone" name="phone" required />
+          <label for="phone">Téléphone mobile*</label>
+        </div>
+        <div class="btn">
+          <button type="button" class="next-step">Continue</button>
+        </div>      
+      </div>
+
+      <div id="step-content-2" class="step-content">
+        <div class="title-selection">
+          <p>Civilité</p>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="title" value="madame" checked />
+              <span class="radio-custom"></span>
+              Madame
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="title" value="mademoiselle" />
+              <span class="radio-custom"></span>
+              Mademoiselle
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="title" value="monsieur" />
+              <span class="radio-custom"></span>
+              Monsieur
+            </label>
+          </div>
+          <div class="input-container" style="margin-top: 20px;">
+            <input type="name" id="name" name="name" required />
+            <label for="name"> Nome*</label>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="name" id="name" name="name" required />
+          <label for="name"> Prenome*</label>
+        </div>
+        <div class="input-container">
+          <input type="text" id="text" name="text" required />
+          <label for="text"> Numéro CIN / Carte de séjour*</label>
+        </div>
+        <div class="input-container">
+          <input type="date" id="date" name="date" required />
+          <label for="date"> Date de naissance*</label>
+        </div>
+        <div class="input-container">
+          <input type="date" id="date" name="date" required />
+          <label for="date"> Date d'embauche/début de l'activité*</label>
+        </div>
+        <div class="input-container">
+          <input type="number" id="number" name="number" required />
+          <label for="">  Total revenus mensuels (net en DH)*</label>
+        </div>
+
+        <h4>Avez vous des crédits en cours ?</h4>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="ouiOuNon" value="oui" checked />
+              <span class="radio-custom"></span>
+              oui
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="ouiOuNon" value="non" />
+              <span class="radio-custom"></span>
+              non
+            </label>
+          </div>
+
+          <div class="btn" >
+            <button class="next-step" type="submit">Demende ce credit</button>
+            <button class="next-step" style="margin-left: 10px;" type="button">Voir mon recapitulatif</button>
+          </div>    
+      </div>
+    </form>
+
     <script>
-      let currentStep = 0;
-      function showStep(step) {
-        document.querySelectorAll(".step").forEach((s, index) => {
-          s.classList.toggle("active", index === step);
-        });
-        currentStep = step;
-      }
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentStep = 0;
+        const steps = document.querySelectorAll(".step");
+        const stepContents = document.querySelectorAll(".step-content");
 
-      document
-        .getElementById("continue-button")
-        .addEventListener("click", () => {
-          if (currentStep < document.querySelectorAll(".step").length - 1) {
-            showStep(currentStep + 1);
+        function showStep(step) {
+          steps.forEach((s, index) => {
+            s.classList.toggle("active", index === step);
+          });
+          stepContents.forEach((content, index) => {
+            content.classList.toggle("active", index === step);
+          });
+          currentStep = step;
+        }
+
+        document.addEventListener("click", function (e) {
+          if (e.target.classList.contains("next-step")) {
+            if (currentStep < steps.length - 1) {
+              showStep(currentStep + 1);
+            }
+          } else if (e.target.classList.contains("prev-step")) {
+            if (currentStep > 0) {
+              showStep(currentStep - 1);
+            }
           }
         });
 
-      document
-        .getElementById("continue-button1")
-        .addEventListener("click", () => {
-          if (currentStep < document.querySelectorAll(".step").length - 1) {
-            showStep(currentStep + 1);
-          }
-        });
-
-      showStep(currentStep);
+        showStep(currentStep);
+      });
+    
     </script>
-  </body>
+    <script>
+      const interestRate = 12 / 100; // Fixed annual interest rate of 12%
+    
+      function updateInputValue(rangeId) {
+        const range = document.getElementById(`custom-range${rangeId}`);
+        const input = document.getElementById(`range-value${rangeId}`);
+        input.value = range.value;
+        if (rangeId === 1 || rangeId === 2) {
+          calculateMensualites();
+        }
+      }
+    
+      function updateRangeValue(rangeId) {
+        const input = document.getElementById(`range-value${rangeId}`);
+        const range = document.getElementById(`custom-range${rangeId}`);
+        range.value = input.value;
+        if (rangeId === 1 || rangeId === 2) {
+          calculateMensualites();
+        }
+      }
+    
+      function updateMensualites() {
+        const mensualite = parseFloat(document.getElementById('range-value3').value); // Monthly payment
+        const n = parseFloat(document.getElementById('range-value2').value); // Number of months
+        const t = interestRate / 12; // Monthly interest rate
+    
+        if (mensualite > 0 && n > 0) {
+          const K = mensualite * (1 - Math.pow(1 + t, -n)) / t;
+          document.getElementById('range-value1').value = K.toFixed(2);
+          document.getElementById('custom-range1').value = K.toFixed(2);
+        }
+      }
+    
+      function calculateMensualites() {
+        const K = parseFloat(document.getElementById('range-value1').value); // Capital
+        const n = parseFloat(document.getElementById('range-value2').value); // Number of months
+        const t = interestRate / 12; // Monthly interest rate
+    
+        if (K > 0 && n > 0) {
+          const mensualite = (K * t) / (1 - Math.pow(1 + t, -n));
+          document.getElementById('range-value3').value = mensualite.toFixed(2);
+          document.getElementById('custom-range3').value = mensualite.toFixed(2);
+        }
+      }
+    
+      // Initial calculation
+      calculateMensualites();
+    </script>  
+
+</body>
 </html>

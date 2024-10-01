@@ -1,45 +1,36 @@
 $ylw: #FDDF35;
 $gry: #9B9B9B;
 $blu: #02AFBC;
-$wht: #ffffff; 
+$wht: #ffffff;
 $blk: #000000;
-
 
 body {
     font-family: Arial, sans-serif;
     background-color: $wht;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    margin: 0;
+    margin: 87px 295px 61px;
 }
 
 
 .steps {
     display: flex;
-    margin-top: 810px !important;
-    width: 600px;
     justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: transparent solid 5px;
-    border-bottom: transparent solid;
-    border-bottom-width: 900px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .step {
+    flex: 1;
     background-color: $gry;
     color: $wht;
-    padding: 28px;
+    padding: 20px;
+    text-align: center;
     position: relative;
 }
 
-
 .step.active {
-    background-color: $ylw; 
-    color: $blk; 
+    background-color: $ylw;
+    color: $blk;
     padding: 30px;
-    display: block;
 }
 
 .step.active:after {
@@ -52,94 +43,222 @@ body {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid $ylw; 
-  }
-  
+    border-top: 10px solid $ylw;
+}
 
-.step-number{
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+.step-content {
+    display: none;
+    padding: 20px;
+}
+
+.step.active .step-content {
     display: block;
 }
 
-.step-title{
+.step-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.step-title {
     font-size: 1rem;
     margin-top: 5px;
 }
 
+.range-container {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+.range-container .range-value{
+    font-weight: bold;
+    color: $blu;
+    height: 27px;
+    width: 103px;
+}
 
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: $ylw;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: $ylw;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.range-container::before,
+.range-container::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background: $blk;
+    display: none;
+}
+
+
+.range-container::before {
+    left: 0;
+}
+
+.range-container::after {
+    right: 0;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    background: transparent;
+}
+
+.input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #666;
+}
+
+.input-container input:focus {
+    border-bottom: 2px solid #666;
+}
+
+.title-selection {
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.title-selection p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+}
+
+.radio-custom::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: $blu;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.2s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.steps {
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.step {
+    flex: 1;
+    padding: 20px;
+    background-color: #9B9B9B;
+    color: white;
+    text-align: center;
+}
+.step.active {
+    background-color: #FDDF35;
+    color: black;
+}
+.step-number {
+    font-size: 24px;
+    font-weight: bold;
+}
+.step-title {
+    display: block;
+    margin-top: 10px;
+}
 .step-content {
     display: none;
-    margin: 10px 0;
+}
+.step-content.active {
+    display: block;
 }
 
-.step-content1 {
-    display: none;
-    margin: 10px;
-    margin-left: -212px;
-
-}
-.step-content2 {
-    display: none;
-    margin: 10px;
-    margin-left: -212px;
-
-}
-.step.active .step-content {
-    display: block; 
-    position: absolute;
-    top: 100%; 
-    left: 40px; 
-    width: 250%; 
-    background-color: $wht;
-    color: $blk;
-    margin-top: 10px;
-    padding: 15px; 
-}
-
-
-.step.active .step-content1 {
-    display: block; 
-    position: absolute;
-    top: 100%; 
-    left: 40px; 
-    width: 250%; 
-    background-color: $wht;
-    color: $blk;
-    margin-top: 10px;
-    padding: 15px; 
-    margin-left: -212px;
-
-}
-
-.step.active .step-content2 {
-    display: block; 
-    position: absolute;
-    top: 100%; 
-    left: 40px; 
-    width: 250%; 
-    background-color: $wht;
-    color: $blk;
-    margin-top: 10px;
-    padding: 15px; 
-    margin-left: -212px;
-
-}
-.step-content h4{
-    color: $gry;
-}
-
-.step-content1 h4{
-    color: $gry;
-
-}
-.step-content2 h4{
-    color: $gry;
-    margin-left: -184px;
-}
-.step-content .step-select {
-    display: inline-block; 
+.step-content select{
+     display: inline-block; 
     padding: 10px 15px; 
     border-radius: 5px; 
     background-color: $wht; 
@@ -148,85 +267,28 @@ body {
     margin-top: -7px;
 
 }
-
-.step-content1 .step-select1 {
-    display: inline-block; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    background-color: $wht; 
-    color: $gry; 
-    width: 100%;
-    margin-top: -7px;
-    margin-left: 0px;
-
-
-}
-.step-content2 .step-select2 {
-    display: inline-block; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    background-color: $wht; 
-    color: $gry; 
-    width: 90%;
-    margin-top: -7px;
-    margin-left: -190px;
-
-
-}
-
-.step-range{
-    display: inline-block; 
-    padding: 10px 15px; 
-    border-radius: 5px; 
-    width: 93%;
-    margin-top: -18px;
-}
-
-.continuer-button{
+.btn{
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-.continuer-button button{
-    background-color: $blu; 
-    color: $wht; 
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 20px; 
-    border-color: $wht;  
+.next-step{
+    padding: 23px 36px;
+    background-color: $blu;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.continuer-button1{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+.prev-step{
+    border: none;
+    background-color: $wht;
 }
 
-.continuer-button2{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    margin-left: -415px;
-}
-
-.continuer-button1 button{
-    background-color: $blu; 
-    color: $wht; 
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 20px; 
-    border-color: $wht;  
-}
-.continuer-button2 button{
-    background-color: $blu; 
-    color: $wht; 
-    font-size: 18px;
-    font-weight: bold;
-    padding: 15px 20px; 
-    border-color: $wht;  
-}
-
-.civilite{
-    margin-left: -190px;
+.prev-step:hover{
+    border: none;
+    background-color: $wht;
+    color: $blu;
 }
