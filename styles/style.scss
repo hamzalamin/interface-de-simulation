@@ -3,11 +3,13 @@ $gry: #9B9B9B;
 $blu: #02AFBC;
 $wht: #ffffff;
 $blk: #000000;
+$gry2: #e3dbdb;
 
 body {
     font-family: Arial, sans-serif;
-    background-color: $wht;
-    margin: 87px 295px 61px;
+    background-color: #e3dbdb;
+    margin: 75px 71px 61px;
+    margin-left: 254px;
 }
 
 
@@ -53,6 +55,9 @@ body {
 
 .step.active .step-content {
     display: block;
+    border: #e5e3e3 solid 1px;
+    margin-top: -24px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
 }
 
 .step-number {
@@ -230,17 +235,25 @@ input[type="range"]::-moz-range-track {
     display: flex;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 20px;
+    width: 649px;
 }
+
 .step {
     flex: 1;
-    padding: 20px;
+    padding: 23px;
     background-color: #9B9B9B;
     color: white;
     text-align: center;
+    margin: -4px;
+    width: 200px;
+    height: 56px;
 }
+
 .step.active {
     background-color: #FDDF35;
     color: black;
+    width: 200px;
+    height: 42px;
 }
 .step-number {
     font-size: 24px;
@@ -255,6 +268,12 @@ input[type="range"]::-moz-range-track {
 }
 .step-content.active {
     display: block;
+    border: #e5e3e3 solid 1px;
+    margin-top: -24px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    background-color: $wht;
+    width: 617px;
+
 }
 
 .step-content select{
@@ -291,4 +310,52 @@ input[type="range"]::-moz-range-track {
     border: none;
     background-color: $wht;
     color: $blu;
+}
+
+
+.recap {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 0px;
+    margin-bottom: 549px;
+    margin-left: 10px;
+}
+
+.recap h3 {
+    color: $blk;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.recap-item {
+    margin-top: 15px;
+}
+
+.recap-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.project-type a {
+    color: #00b5ad;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.project-type a:hover {
+    text-decoration: underline;
+}
+
+.container--right{
+    background-image: url(https://www.wafasalaf.ma/themes/wafasalaf/assets/img/recap-background.png);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 250%;
+    width: 28%;
+    height: fit-content;
+    margin: 20px ;
+    padding: 20px 0;
+    line-height: 1.75rem;
 }
