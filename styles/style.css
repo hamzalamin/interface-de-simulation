@@ -288,12 +288,24 @@ input[type=range]::-moz-range-track {
 }
 
 .next-step {
-  padding: 23px 36px;
   background-color: #02AFBC;
-  color: white;
-  border: none;
+  color: #ffffff;
+  border-color: #ffffff;
+  padding: 15px 30px;
+  font-size: 24px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  text-align: center;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.next-step .subtext {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.next-step:hover {
+  background-color: #02AFBC;
 }
 
 .prev-step {
@@ -352,6 +364,15 @@ input[type=range]::-moz-range-track {
   margin: 20px;
   padding: 20px 0;
   line-height: 1.75rem;
+}
+
+.container--right h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.container--right .recap-table {
+  margin-left: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -293,13 +293,27 @@ input[type="range"]::-moz-range-track {
 }
 
 .next-step{
-    padding: 23px 36px;
-    background-color: $blu;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    background-color: $blu; 
+    color: $wht; 
+    border-color: $wht;
+    padding: 15px 30px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    text-align: center;
+    outline: none;
+    transition: background-color 0.3s;
 }
+
+.next-step .subtext {
+    font-size: 16px; 
+    font-weight: 400;
+}
+.next-step:hover {
+    background-color: $blu; 
+}
+
+
+
 
 .prev-step{
     border: none;
@@ -358,4 +372,13 @@ input[type="range"]::-moz-range-track {
     margin: 20px ;
     padding: 20px 0;
     line-height: 1.75rem;
+}
+
+.container--right h2{
+    display: flex;
+    justify-content: center;
+}
+
+.container--right .recap-table{
+    margin-left: 5px;
 }
